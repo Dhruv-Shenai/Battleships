@@ -35,7 +35,14 @@ def place_ship(board, size): #size= size of boat e.g. 2 if 2by1 ship
 def play_battleship(board):
     print("Let's play Battleship!")
     howmanyshipsarehit=0
-    for turn in range(num_large_boats*4+num_medium_boats*3+num_small_boats*2+10):  # Allow enough turns to get each part of the ship, and 10 extra guesses
+    difficulty=input('What would you like your difficulty to be? E for easy, M for medium, H for hard. (Caps sensitive) )
+    if difficulty='E':
+        difficulty=18
+    if difficulty='M':
+        difficulty=15
+    if difficulty='H':
+        difficulty=10
+    for turn in range(num_large_boats*4+num_medium_boats*3+num_small_boats*2+difficulty):  # Allow enough turns to get each part of the ship, and 10 extra guesses
         print(f"Turn {turn + 1}")
         if howmanyshipsarehit==num_large_boats*4+num_medium_boats*3+num_small_boats*2:
             print("You sunk all the ships!!")
